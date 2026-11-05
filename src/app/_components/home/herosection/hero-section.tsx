@@ -1,6 +1,6 @@
 import Button from "@/app/_components/button/Button"
 import Image from "next/image"
-
+import { IconArrowLeftFill } from "@/app/_components/icons/icons";
 export const HeroSection = () => {
   return (
     <section className="bg-hero-pattern bg-no-repeat bg-center mt-5 xl:mt-20 xl:bg-left">
@@ -18,7 +18,7 @@ export const HeroSection = () => {
             <div className="flex justify-center xl:justify-start gap-4 mt-5">
               <Button variant="primary" size="large">
                 دوره های ری اکت و نکست
-                {/* <IconArrowLeftFill fill="currentColor"/> */}
+                <IconArrowLeftFill fill="currentColor"/>
               </Button>
               <Button variant="neutral" size="large">
                مشاوره برنامه نویسی
@@ -40,7 +40,6 @@ export const HeroSection = () => {
             alt="کلاسبن"
           />
         </div>
-
 
     </section>
   )
