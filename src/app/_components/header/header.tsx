@@ -10,6 +10,7 @@ export const Header = () => {
           width={100}
           height={36}
           alt="کلاسبن"
+          priority
         />
 
         <TopNavigation />

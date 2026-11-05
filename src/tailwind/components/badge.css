@@ -1,51 +1,63 @@
+
 .badge {
   @apply inline-flex gap-1 items-center justify-center transition duration-200 ease-in-out rounded-md font-semibold;
   @apply leading-5;
+
   width: fit-content;
   padding-left: 0.763rem;
   padding-right: 0.763rem;
+}
 
-  &-neutral {
-    @apply dark:border-base-content dark:bg-base-content/30 dark:text-base-content;
-  }
-  &-primary {
-    @apply dark:border-primary dark:bg-primary/30 dark:text-primary;
-  }
-  &-secondary {
-    @apply dark:border-secondary dark:bg-secondary/30 dark:text-secondary;
-  }
-  &-accent {
-    @apply dark:border-accent dark:bg-accent/30 dark:text-accent;
-  }
-  &-info {
-    @apply dark:border-transparent dark:bg-info/30 dark:text-info;
-  }
-  &-success {
-    @apply dark:border-transparent dark:bg-success/30 dark:text-success;
-  }
-  &-warning {
-    @apply dark:border-transparent dark:bg-warning/30 dark:text-warning;
-  }
-  &-error {
-    @apply dark:border-transparent dark:bg-error/30 dark:text-error;
-  }
-  &-ghost {
-    @apply dark:border-white dark:bg-white/30 dark:text-base-300;
-  }
+/* Badge colors */
+.badge-neutral {
+  @apply dark:border-base-content dark:bg-base-content/30 dark:text-base-content;
+}
 
-  &-xs {
-    @apply h-5 text-xs font-bold;
-  }
+.badge-primary {
+  @apply dark:border-primary dark:bg-primary/30 dark:text-primary;
+}
 
-  &-sm {
-    @apply h-6 text-sm;
-  }
+.badge-secondary {
+  @apply dark:border-secondary dark:bg-secondary/30 dark:text-secondary;
+}
 
-  &-md {
-    @apply h-7 text-base;
-  }
+.badge-accent {
+  @apply dark:border-accent dark:bg-accent/30 dark:text-accent;
+}
 
-  &-lg {
-    @apply h-8 text-lg;
-  }
+.badge-info {
+  @apply dark:border-transparent dark:bg-info/30 dark:text-info;
+}
+
+.badge-success {
+  @apply dark:border-transparent dark:bg-success/30 dark:text-success;
+}
+
+.badge-warning {
+  @apply dark:border-transparent dark:bg-warning/30 dark:text-warning;
+}
+
+.badge-error {
+  @apply dark:border-transparent dark:bg-error/30 dark:text-error;
+}
+
+.badge-ghost {
+  @apply dark:border-white dark:bg-white/30 dark:text-base-300;
+}
+
+/* Badge sizes */
+.badge-xs {
+  @apply h-5 text-xs font-bold;
+}
+
+.badge-sm {
+  @apply h-6 text-sm;
+}
+
+.badge-md {
+  @apply h-7 text-base;
+}
+
+.badge-lg {
+  @apply h-8 text-lg;
 }

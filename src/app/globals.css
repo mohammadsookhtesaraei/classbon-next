@@ -1,8 +1,12 @@
 @import "tailwindcss";
-@import "../tailwind/components.css";
+
+
+
 
 
 @custom-variant dark (&:where(.dark,.dark *));
+
+@import "../tailwind/components.css";
 
 :root {
   --current: currentColor;

@@ -3,7 +3,9 @@ import { Figtree } from "next/font/google";
 import yekanFont from "@/constants/fonts";
 
 import "./globals.css";
+
 import {Header} from "./_components/header";
+import { Footer } from "./_components/footer";
 
 
 const figtree = Figtree({
@@ -28,9 +30,10 @@ export default function RootLayout({
       dir="rtl"
       className={`dark ${yekanFont.variable} ${figtree.variable}`}
     >
-      <body className="min-h-screen grid-rows-[80px_1fr_auto] dark:bg-base-100 dark:text-base-content">
+      <body className="min-h-screen grid grid-rows-[80px_1fr_auto] dark:bg-base-100 dark:text-base-content">
         <Header/>
-        {children}
+        <main>{children}</main>
+        <Footer/>
       </body>
     </html>
   );
