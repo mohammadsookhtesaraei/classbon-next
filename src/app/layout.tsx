@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import { Figtree } from "next/font/google";
 import yekanFont from "@/constants/fonts";
 
-
 import "./globals.css";
 
 const figtree = Figtree({
@@ -23,8 +22,13 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html className={`${yekanFont.variable} ${figtree.variable}`}>
-      <body>{children}</body>
+    <html
+      dir="rtl"
+      className={`dark ${yekanFont.variable} ${figtree.variable}`}
+    >
+      <body className="min-h-screen grid-rows-[80px_1fr_auto] dark:bg-base-100 dark:text-base-content">
+        {children}
+      </body>
     </html>
   );
 }
