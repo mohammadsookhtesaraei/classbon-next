@@ -14,11 +14,11 @@ const Loading: React.FC<LoadingProps> = ({
   type = "spinner",
   size = "normal",
   variant,
-  clasName,
+  className,
 }: LoadingProps) => {
   const classes = classNames(
     "loading",
-    clasName,
+    className,
     { [`loading-${type}`]: type },
     { [`${sizeClasses[size]}`]: size },
     { [`loading-${variant}`]: variant },

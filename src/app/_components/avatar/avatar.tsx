@@ -13,12 +13,12 @@ const sizeClasses: Record<Size, number> = {
 
 const Avatar: React.FC<AvatarProps> = ({
   alt = "",
-  clasName,
+  className,
   size = "normal",
   src,
   variant = "primary",
 }: AvatarProps) => {
-  const classes = classNames("avatar", clasName, {
+  const classes = classNames("avatar", className, {
     [`avatar-${variant}`]: variant,
     [`${sizeClasses[size]}`]: size,
   });

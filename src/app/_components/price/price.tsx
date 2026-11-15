@@ -15,7 +15,7 @@ large:{textSize:"text-3xl",svgSize:22},
 
 const Price:React.FC<PriceProps> = ({
     size="normal",
-    clasName,
+    className,
     text="رایگان",
     price
 }:PriceProps) => {
@@ -24,7 +24,7 @@ const Price:React.FC<PriceProps> = ({
   return (
     <>
     {price != null && price > 0 ? (
-        <span className={`flex items-center font-bold gap-1 dark:text-white/99 ${clasName} ${sizesClasses[size]}`}>
+        <span className={`flex items-center font-bold gap-1 dark:text-white/99 ${className} ${sizesClasses[size]}`}>
          {price.toLocaleString()}
          <IconToman strokeWidth={1} viewBox="0 0 16 16" width={svgSize} height={svgSize}/>
         </span>

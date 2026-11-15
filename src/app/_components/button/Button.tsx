@@ -32,14 +32,14 @@ const Button:React.FC<ButtonProps> = ({
   type="button",
   isLink=false,
   animatedIcon=false,
-  clasName="",
+  className="",
   children,
   ...rest
 }:ButtonProps) => {
   
   const classes=classNames(
     "btn",
-    clasName,
+    className,
     {"btn-outline":isOutline},
     {"btn-link":isLink},
     {"animated-icon":animatedIcon},

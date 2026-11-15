@@ -12,12 +12,12 @@ const sizeClasses: Record<Size, number> = {
 };
 export const rating = ({
   rate,
-  clasName,
+  className,
   size = "normal",
   variant = "warning",
 }: RatingProps) => {
   return (
-    <div className={`flex gap-1 ${clasName}`}>
+    <div className={`flex gap-1 ${className}`}>
       {[1, 2, 3, 4, 5].map((index) => (
         <IconStar
           key={`star-${index}`}

@@ -4,7 +4,7 @@ import { Size } from "./size.type"
 
 export type ComponentBase= {
 isDisabled?:boolean,
-clasName?:string,
+className?:string,
 variant?:Variant,
 size?: Size
 }

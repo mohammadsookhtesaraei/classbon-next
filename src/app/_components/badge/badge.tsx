@@ -9,10 +9,10 @@ const sizeClasses:Record<Size,string> = {
   large:"badge-lg"
 };
 
-const Badge:React.FC<BadgeProps> = ({variant,clasName,size="tiny",children}:BadgeProps) => {
+const Badge:React.FC<BadgeProps> = ({variant,className,size="tiny",children}:BadgeProps) => {
     const classes=classNames(
         "badge",
-        clasName,
+        className,
         {[`badge-${variant}`]:variant},
         {[`${sizeClasses[size]}`]:size}
     )
