@@ -41,7 +41,9 @@ const CourseDetails = async ({
 
         <div className=" mt-5">Video Player Component</div>
       </div>
-      <div className="col-span-10 xl:col-span-3 bg-secondary">second</div>
+      <div className="col-span-10 xl:col-span-3 bg-secondary">
+      
+      </div>
       <div className="col-span-10 xl:col-span-6 bg-info">third</div>
       <div className="col-span-10 xl:col-span-4 bg-warning">fourth</div>
 
