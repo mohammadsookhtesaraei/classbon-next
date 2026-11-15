@@ -1,4 +1,4 @@
-import { Suspense } from "react"
+
 
 import { CourseSummary } from "@/types/course-summary-interface"
 
@@ -21,7 +21,7 @@ async function getNewstCourse(count:number):Promise<CourseSummary[]> {
 
 
 const CoursesCardList =async ({courses}:CoursesCardListProps) => {
-    
+
      const newestCourseData=await getNewstCourse(4);
      
   return (
