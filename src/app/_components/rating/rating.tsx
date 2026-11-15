@@ -10,7 +10,7 @@ const sizeClasses: Record<Size, number> = {
   normal: 24,
   large: 30,
 };
-export const rating = ({
+export const Rating = ({
   rate,
   className,
   size = "normal",

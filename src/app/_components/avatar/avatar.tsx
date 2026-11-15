@@ -11,14 +11,14 @@ const sizeClasses: Record<Size, number> = {
   large: 120,
 };
 
-const Avatar: React.FC<AvatarProps> = ({
+ export const Avatar: React.FC<AvatarProps> = ({
   alt = "",
   className,
   size = "normal",
   src,
   variant = "primary",
 }: AvatarProps) => {
-  const classes = classNames("avatar", className, {
+ const classes = classNames("avatar", className, {
     [`avatar-${variant}`]: variant,
     [`${sizeClasses[size]}`]: size,
   });
@@ -43,4 +43,4 @@ const Avatar: React.FC<AvatarProps> = ({
     </div>
   );
 };
-export default Avatar;
+

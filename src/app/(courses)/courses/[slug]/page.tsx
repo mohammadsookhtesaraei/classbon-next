@@ -3,6 +3,7 @@ import { type CourseDetails } from "@/types/course-details-interface";
 
 // api
 import { API_URL } from "@/configs/global";
+import { CourseAside } from "@/app/(courses)/courses/[slug]/_components/course-aside";
 
 // generateStaticParams
 export async function generateStaticParams() {
@@ -29,7 +30,7 @@ const CourseDetails = async ({
   const course = await getCourse(slug);
 
   return (
-    <div className="container h-96 grid grid-cols-10 gap-10 py-10">
+    <div className="container grid grid-cols-10 gap-10 py-10">
       <div className="bg-primary pointer-events-none absolute right-0 aspect-square w-1/2   rounded-full opacity-10 blur-3xl"></div>
       <div className="col-span-10 xl:col-span-7">
           <h1 className="text-center xl:text-right text-2xl lg:text-3xl xl:text-4xl font-black leading-10">
@@ -41,8 +42,8 @@ const CourseDetails = async ({
 
         <div className=" mt-5">Video Player Component</div>
       </div>
-      <div className="col-span-10 xl:col-span-3 bg-secondary">
-      
+      <div className="col-span-10 xl:col-span-3">
+      <CourseAside {...course}/>
       </div>
       <div className="col-span-10 xl:col-span-6 bg-info">third</div>
       <div className="col-span-10 xl:col-span-4 bg-warning">fourth</div>
