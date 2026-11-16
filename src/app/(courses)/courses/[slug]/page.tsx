@@ -4,6 +4,8 @@ import { type CourseDetails } from "@/types/course-details-interface";
 // api
 import { API_URL } from "@/configs/global";
 import { CourseAside } from "@/app/(courses)/courses/[slug]/_components/course-aside";
+import { Tab } from "@/types/tab.type";
+import { Tabs } from "@/app/_components/tabs";
 
 // generateStaticParams
 export async function generateStaticParams() {
@@ -29,6 +31,20 @@ const CourseDetails = async ({
   const slug = (await params).slug;
   const course = await getCourse(slug);
 
+    const tabs: Tab[] = [
+    {
+      label: "مشخصات دوره",
+      content: course.description,
+    },
+    {
+      label: "دیدگاه ها  و پرسش",
+      content: "course comment"
+    },
+    {
+      label: "سوالات متداول",
+      content:"accordion"
+    },
+  ];
   return (
     <div className="container grid grid-cols-10 gap-10 py-10">
       <div className="bg-primary pointer-events-none absolute right-0 aspect-square w-1/2   rounded-full opacity-10 blur-3xl"></div>
@@ -45,7 +61,9 @@ const CourseDetails = async ({
       <div className="col-span-10 xl:col-span-3">
       <CourseAside {...course}/>
       </div>
-      <div className="col-span-10 xl:col-span-6 bg-info">third</div>
+      <div className="col-span-10 xl:col-span-6">
+       <Tabs tabs={tabs}/>
+      </div> 
       <div className="col-span-10 xl:col-span-4 bg-warning">fourth</div>
 
 
