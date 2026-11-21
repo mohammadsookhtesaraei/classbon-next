@@ -83,6 +83,7 @@ const CourseDetails = async ({
     <div className="container grid grid-cols-10 gap-10 py-10">
       <div className="bg-primary pointer-events-none absolute right-0 aspect-square w-1/2   rounded-full opacity-10 blur-3xl"></div>
       <div className="col-span-10 xl:col-span-7">
+        
         <h1 className="text-center xl:text-right text-2xl lg:text-3xl xl:text-4xl font-black leading-10">
           {course.title}
         </h1>

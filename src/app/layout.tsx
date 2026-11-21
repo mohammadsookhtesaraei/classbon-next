@@ -7,6 +7,7 @@ import "./globals.css";
 import { Header } from "./_components/header";
 import { Footer } from "./_components/footer";
 import ReactQueryProvider from "@/providers/react-query-provider";
+import NextTopLoader from "nextjs-toploader";
 
 const figtree = Figtree({
   display: "swap",
@@ -31,6 +32,7 @@ export default function RootLayout({
       className={`dark ${yekanFont.variable} ${figtree.variable}`}
     >
       <body className="min-h-screen grid grid-rows-[80px_1fr_auto] dark:bg-base-100 dark:text-base-content">
+        <NextTopLoader showSpinner={false} color={"var(--color-primary)"}/>
         <ReactQueryProvider>
           <Header />
           <main>{children}</main>
