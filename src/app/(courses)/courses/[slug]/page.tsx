@@ -18,6 +18,8 @@ import CourseComments from "./_components/comments/course-comments";
 // types
 import { CourseChapter } from "@/types/course-chapter.interface";
 import CourseCurriculum from "@/app/(courses)/courses/[slug]/_components/course-curriculum/course-curriculum";
+import Image from "next/image";
+import VideoPlayer from "@/app/_components/video-player/video-player";
 
 // generateStaticParams
 export async function generateStaticParams() {
@@ -51,6 +53,8 @@ const CourseDetails = async ({
     getCourse(slug),
     getCurriculum(slug),
   ]);
+
+  console.log(course);
 
   // faqs array for accordion component in tab array for tabs component
   const faqs: AccordionType[] = course.frequentlyAskedQuestions.map((faq) => ({
@@ -86,7 +90,14 @@ const CourseDetails = async ({
           {course.subTitle}
         </h2>
 
-        <div className=" mt-5">Video Player Component</div>
+           <div className="mt-5">
+                    {course.videoUrl ? (
+                        <VideoPlayer src={course.videoUrl} poster={`${API_URL}/picture/${course.coverImageId}`}/>
+                    ) : (
+                        <Image src={`${API_URL}/picture/${course.coverImageId}`} alt={course.title}
+                               width={550} height={327} className={"w-full"}/>
+                    )}
+                </div>
       </div>
       <div className="col-span-10 xl:col-span-3">
         <CourseAside {...course} />
