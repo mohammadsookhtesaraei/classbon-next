@@ -39,7 +39,7 @@ const CourseDetails = async ({
 }) => {
   const slug = (await params).slug;
   const course = await getCourse(slug);
-  console.log(course);
+
 
 
   // faqs array for accordion component in tab array for tabs component
