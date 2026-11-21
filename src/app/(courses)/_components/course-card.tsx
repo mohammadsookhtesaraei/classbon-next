@@ -28,7 +28,7 @@ const CourseCard= ({
         {/* image */}
         <figure>
          <Image
-          src={`https://api.classbon.com/api/picture/${coverImageId}`}
+          src={`https://react-architecture.darkube.ir/api/picture/${coverImageId}`}
           alt={title}
           width={550}
           height={327}

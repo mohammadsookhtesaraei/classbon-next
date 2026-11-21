@@ -1,13 +1,20 @@
 // type
+
 import { type CourseDetails } from "@/types/course-details-interface";
+import { Tab } from "@/types/tab.type";
+import { Accordion as AccordionType } from "@/types/accordion";
 
 // api
 import { API_URL } from "@/configs/global";
-import { CourseAside } from "@/app/(courses)/courses/[slug]/_components/course-aside";
-import { Tab } from "@/types/tab.type";
+
+// components
+
+import { CourseAside } from "./_components/course-aside/course-aside";
 import { Tabs } from "@/app/_components/tabs";
+
+
 import { Accordion } from "@/app/_components/accordion";
-import { Accordion as AccordionType } from "@/types/accordion";
+import CourseComments from "./_components/comments/course-comments";
 
 // generateStaticParams
 export async function generateStaticParams() {
@@ -32,11 +39,16 @@ const CourseDetails = async ({
 }) => {
   const slug = (await params).slug;
   const course = await getCourse(slug);
+
+
+  // faqs array for accordion component in tab array for tabs component
   const faqs:AccordionType[]=course.frequentlyAskedQuestions.map((faq)=>({
     id:faq.id,
     title:faq.question,
     content:faq.answer
   }));
+   
+  // tab array with courseComments and accordion components
     const tabs: Tab[] = [
     {
       label: "مشخصات دوره",
@@ -44,13 +56,15 @@ const CourseDetails = async ({
     },
     {
       label: "دیدگاه ها  و پرسش",
-      content: "course comment"
+      content: <CourseComments/>
     },
     {
       label: "سوالات متداول",
       content:<Accordion data={faqs}/>
     },
   ];
+
+  
   return (
     <div className="container grid grid-cols-10 gap-10 py-10">
       <div className="bg-primary pointer-events-none absolute right-0 aspect-square w-1/2   rounded-full opacity-10 blur-3xl"></div>
