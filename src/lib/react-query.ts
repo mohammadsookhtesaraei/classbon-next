@@ -12,7 +12,7 @@ export const queryClient=new QueryClient({
             retry:false,
             refetchOnWindowFocus:false,
             throwOnError: false,
-            gcTime:1000 * 60 *60 * 60,/* 24 hour  کش و نگه میداره در کلاینت*/
+            gcTime:1000 * 60 * 60 * 60,/* 24 hour  کش و نگه میداره در کلاینت*/
         }
     }
 })

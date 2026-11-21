@@ -22,8 +22,8 @@ export const useCourseComments = ({ params }: GetCommentsOptions) => {
     const { data } = useQuery({
         queryKey: ["courseComments"],
         queryFn: () => getComments({ params }),
-        staleTime: 5 * 60 * 60 * 1000,
-        gcTime: 6 * 60 * 60 * 1000,
+        staleTime: 5 * 60 * 60 * 1000, /* 5 hours - must be fresh */
+        gcTime: 6 * 60 * 60 * 1000, /* 6 hours  in cache*/
 
     });
 

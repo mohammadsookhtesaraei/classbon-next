@@ -11,7 +11,7 @@ export const Accordion = ({ data }:AccordionProps) => {
   };
 
   return (
-    <div className="accordion">
+    <div className="accordion bg-[#111]">
       {data.map((item, index) => (
         <div key={`accordion-${item.id}`}>
           <h2 className="accordion-title">

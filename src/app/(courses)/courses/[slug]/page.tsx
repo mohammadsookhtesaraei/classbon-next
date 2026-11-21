@@ -39,6 +39,7 @@ const CourseDetails = async ({
 }) => {
   const slug = (await params).slug;
   const course = await getCourse(slug);
+  console.log(course);
 
 
   // faqs array for accordion component in tab array for tabs component
@@ -47,6 +48,8 @@ const CourseDetails = async ({
     title:faq.question,
     content:faq.answer
   }));
+
+
    
   // tab array with courseComments and accordion components
     const tabs: Tab[] = [
