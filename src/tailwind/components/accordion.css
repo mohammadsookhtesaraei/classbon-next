@@ -1,12 +1,27 @@
-
-.accordion {
-  @apply rounded-t-xl overflow-hidden;
+.accordion.title > button {
+  @apply text-base flex items-center text-base-content bg-base-50 justify-between w-full duration-300 transition-all p-5 font-medium text-right border border-white/5 hover:bg-base-25;
 }
 
-.accordion-title > button {
-  @apply text-base flex items-center dark:bg-base-50 justify-between w-full duration-100 transition-all p-5 font-medium text-right border dark:border-white/5 dark:hover:bg-base-25;
+.accordion.title > button.active {
+  @apply text-white;
 }
 
-.accordion-content {
-  @apply p-5 text-base leading-8 dark:bg-base-75;
+.accordion.title > button > svg {
+  @apply transition-all duration-300;
+}
+
+.accordion.title > button > svg.active {
+  @apply rotate-180 text-white;
+}
+
+.accordion.content {
+  @apply text-base leading-8 bg-base-75 overflow-hidden transition-all duration-300 px-5;
+}
+
+.accordion.content.in-active {
+  @apply opacity-0 py-0 max-h-0;
+}
+
+.accordion.content.active {
+  @apply opacity-100 py-5 max-h-[2000px];
 }
