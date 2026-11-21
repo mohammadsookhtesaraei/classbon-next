@@ -1,27 +1,29 @@
+
 "use client";
+
 import React, { useState } from "react";
 import { AccordionProps } from "./accordion.types";
 import { IconChevronDown, IconChevronUp } from "../icons/icons";
 
-export const Accordion = ({ data }:AccordionProps) => {
+export const Accordion = ({ data }: AccordionProps) => {
   const [activeIndex, setActiveIndex] = useState<number | null>(null);
 
   const toggleAccordion = (index: number) => {
-    setActiveIndex(activeIndex === index ? null : index);
+    setActiveIndex((prev) => (prev === index ? null : index));
   };
 
   return (
-    <div className="accordion bg-[#111]">
+    <div className="accordion">
       {data.map((item, index) => (
         <div key={`accordion-${item.id}`}>
-          <h2 className="accordion-title">
+          <h2 className="accordion title">
             <button
               onClick={() => toggleAccordion(index)}
               type="button"
-              className={`${
-                index === activeIndex ? "text-white" : "text-base-content"
-              }`}>
+              className={index === activeIndex ? "active" : ""}
+            >
               <span>{item.title}</span>
+
               {activeIndex === index ? (
                 <IconChevronUp width={18} />
               ) : (
@@ -29,11 +31,14 @@ export const Accordion = ({ data }:AccordionProps) => {
               )}
             </button>
           </h2>
+
           {activeIndex === index && (
-            <div className={`accordion-content`}>{item.content}</div>
+            <div className="accordion-content">{item.content}</div>
           )}
         </div>
       ))}
     </div>
   );
 };
+
+export default Accordion;

@@ -75,7 +75,7 @@ export const CourseCurriculum: React.FC<CourseCurriculumProps> = ({ data }) => {
                     {lecture.title}
 
                     <div className="flex items-center gap-2">
-                      <Badge variant="info" className="!w-20 mt-1">
+                      <Badge variant="info" className="w-20! mt-1">
                         {lecture.duration}
                       </Badge>
                     </div>
