@@ -10,7 +10,7 @@ type NotificationStore = {
 };
 
 
-export const useNotificatioStore = create<NotificationStore>((set, get) => ({
+export const useNotificationStore = create<NotificationStore>((set, get) => ({
     notifications: [],
     showNotification: (notification) => {
         const id = uuidv4();
