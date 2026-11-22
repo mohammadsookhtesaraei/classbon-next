@@ -16,10 +16,10 @@ import classNames from "classnames";
 
 // type
 const sizeClasses: Record<Size, string> = {
-    tiny: "textbox xs",
-    small: "textbox sm",
-    normal: "textbox md",
-    large: "textbox lg",
+    tiny: "textbox-xs",
+    small: "textbox-sm",
+    normal: "textbox-md",
+    large: "textbox-lg",
 };
 
 
@@ -34,7 +34,7 @@ const sizeClasses: Record<Size, string> = {
 
     return(
         <>
-        <input ref={ref} type={type} className={classes} {...otherProps} />;
+        <input ref={ref} type={type} className={classes} {...otherProps} />
         </>
     )
 };

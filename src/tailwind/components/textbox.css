@@ -1,0 +1,90 @@
+.textbox {
+    @apply h-12 px-4 text-sm leading-loose flex-shrink placeholder-base-content;
+    @apply border border-base-25 bg-transparent rounded-lg text-base;
+}
+
+.textbox:focus {
+    @apply outline outline-2 outline-offset-2;
+}
+
+.textbox.ghost:focus {
+    @apply outline-primary border-primary;
+    box-shadow: none;
+}
+
+.textbox.primary {
+    @apply border-primary;
+}
+
+.textbox.primary:focus {
+    @apply outline-primary;
+}
+
+.textbox.secondary {
+    @apply border-secondary;
+}
+
+.textbox.secondary:focus {
+    @apply outline-secondary;
+}
+
+.textbox.accent {
+    @apply border-accent;
+}
+
+.textbox.accent:focus {
+    @apply outline-accent;
+}
+
+.textbox.info {
+    @apply border-info;
+}
+
+.textbox.info:focus {
+    @apply outline-info;
+}
+
+.textbox.success {
+    @apply border-success;
+}
+
+.textbox.success:focus {
+    @apply outline-success;
+}
+
+.textbox.warning {
+    @apply border-warning;
+}
+
+.textbox.warning:focus {
+    @apply outline-warning;
+}
+
+.textbox.error {
+    @apply border-error;
+}
+
+.textbox.error:focus {
+    @apply outline-error;
+}
+
+.textbox-xs {
+    @apply h-6 px-2 text-xs leading-relaxed;
+}
+
+.textbox-md {
+    @apply h-12 px-4 text-sm leading-loose;
+}
+
+.textbox-lg {
+    @apply h-16 px-6 text-lg leading-loose;
+}
+
+.textbox-sm {
+    @apply h-8 px-3 text-sm leading-8;
+}
+.textbox.disabled,
+.textbox:disabled,
+.textbox[disabled] {
+    @apply cursor-not-allowed border-base-200 bg-base-200 placeholder-base-content;
+}

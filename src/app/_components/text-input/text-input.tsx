@@ -1,4 +1,4 @@
-import { FieldValues, get } from "react-hook-form";
+import { FieldError, FieldValues, get } from "react-hook-form";
 import { TextInputProps } from "./textinput.types";
 
 import { TextBox } from "@/app/_components/textbox";
@@ -10,7 +10,7 @@ export const TextInput = <TFormValues extends FieldValues>({
   variant,
   ...rest
 }: TextInputProps<TFormValues>) => {
-    const error=get(errors, name);
+    const error=get(errors, name) as FieldError | undefined;;
   return (
         <div>
       <TextBox
