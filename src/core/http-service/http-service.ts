@@ -129,3 +129,12 @@ async function deleteData<T>(
 
 // Export کردن توابع برای استفاده در سایر بخش‌های پروژه
 export { createData, readData, updateData, deleteData };
+
+
+export const httpServices = {
+    get: readData,
+    put: updateData,
+    delete: deleteData,
+    post: createData,
+}
+
