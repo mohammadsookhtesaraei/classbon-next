@@ -27,10 +27,11 @@ import { useSignIn } from "@/app/(auth)/signin/_api/signin";
 
 
 // zustand
-
+import { useNotificationStore } from "@/stores/notification.store";
 
 const SignInForm = () => {
 const router=useRouter();
+const showNotification=useNotificationStore(state=>state.showNotification)
   const {
     register,
     handleSubmit,
@@ -48,7 +49,15 @@ const router=useRouter();
 
   const onSubmit=(data:SignIn)=>{
   singIn.submit(data);
-  }
+  };
+
+  useEffect(()=>{
+    showNotification({
+      type:"error",
+      duration:1000,
+      message:"error"
+    })
+  })
   return (
     <>
       <h5 className="text-2xl">ورود | ثبت نام</h5>
