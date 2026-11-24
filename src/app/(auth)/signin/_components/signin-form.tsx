@@ -43,7 +43,11 @@ const showNotification=useNotificationStore(state=>state.showNotification)
 
   const singIn=useSignIn({
     onSuccess:()=>{
-    router.push(`/verify?mobile=${getValues('mobile')}`)
+    router.push(`/verify?mobile=${getValues('mobile')}`);
+    showNotification({
+      type:"info",
+      message:"کد تایید به شماره شما ارسال شد"
+    })
     }
   });
 
@@ -51,13 +55,13 @@ const showNotification=useNotificationStore(state=>state.showNotification)
   singIn.submit(data);
   };
 
-  useEffect(()=>{
-    showNotification({
-      type:"error",
-      duration:1000,
-      message:"error"
-    })
-  })
+  // useEffect(()=>{
+  //   showNotification({
+  //     type:"error",
+  //     duration:1000,
+  //     message:"error"
+  //   })
+  // })
   return (
     <>
       <h5 className="text-2xl">ورود | ثبت نام</h5>
